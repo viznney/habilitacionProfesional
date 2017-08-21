@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="entidades.PermisoUsuario" table="permisousuario">
+        <id name="OID" type="string">
+            <column name="OIDPermisoUsuario"/>
+            <generator class="uuid2"/>
+        </id>
+
+        <property name="codPermiso" type="int">
+            <column name="codigo"/>
+        </property>
+
+        <property name="nombrePermiso" type="string">
+            <column name="nombre"/>
+        </property>
+
+    </class>
+</hibernate-mapping>

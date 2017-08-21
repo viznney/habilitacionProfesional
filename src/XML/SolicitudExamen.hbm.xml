@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="Entidades.SolicitudExamen" table="solicitudexamen">
+      <id name="OID" type="string">
+            <column name="OIDSolicitudExamen"/>
+            <generator class="uuid2"/>
+        </id>
+
+        <property name="fechaSolicitud" type="date">
+            <column name="fecha"/>
+        </property>
+        
+        <property name="nroSolicitud" type="int">
+            <column name="nroSolicitud"/>
+        </property>
+        
+        <many-to-one name="m_EstadoSolicitud" class="entidades.EstadoSolicitud" not-null="true"> //  nombre de la variable que se refiere a la clase realcionada
+            <column name="OIDEstadoSolicitud"/> // columna en la base de datos que refiere al oid de la clase relacionada
+        </many-to-one>
+        
+        <many-to-one name="m_Paciente" class="entidades.Paciente" not-null="true">
+            <column name="OIDPaciente"/>
+        </many-to-one>
+        
+        <many-to-one name="m_UsuarioLab" class="entidades.UsuarioLab" not-null="true">
+            <column name="OIDUsuarioLab"/>
+        </many-to-one>
+        
+        <many-to-one name="m_Medico" class="entidades.Medico" not-null="true">
+            <column name="OIDMedico"/>
+        </many-to-one>
+        
+         <many-to-one name="m_TipoExamen" class="entidades.TipoExamen" not-null="true">
+            <column name="OIDTipoExamen"/>
+        </many-to-one>
+        
+        
+        </class>
+</hibernate-mapping>

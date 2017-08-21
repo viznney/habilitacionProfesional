@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="entidades.EstadoSolicitud" table="EstadoSolicitud">
+        <id name="OID" type="string">
+            <column name="OIDEstadoSolicitud"/>
+            <generator class="uuid2"/>
+        </id>
+
+        <property name="codEstadoS" type="int">
+            <column name="codEstadoS"/>
+        </property>
+
+        <property name="nombreEstadoS" type="string">
+            <column name="nombreEstadoS"/>
+        </property>
+
+    </class>
+
+</hibernate-mapping>
