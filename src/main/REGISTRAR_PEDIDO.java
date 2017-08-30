@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package main;
+import java.util.*;
+import java.util.Calendar;
+
 
 /**
  *
@@ -16,6 +19,10 @@ public class REGISTRAR_PEDIDO extends javax.swing.JFrame {
      */
     public REGISTRAR_PEDIDO() {
         initComponents();
+Calendar cal = Calendar.getInstance();
+String fecha, hora;
+fecha = cal.get(Calendar.DATE)+"/"+cal.get(Calendar.MONTH)+"/"+cal.get(Calendar.YEAR);
+this.campofecha.setText(fecha);
     }
 
     /**
@@ -73,6 +80,8 @@ public class REGISTRAR_PEDIDO extends javax.swing.JFrame {
         textField9 = new java.awt.TextField();
         textField10 = new java.awt.TextField();
         jButton11 = new javax.swing.JButton();
+        campousuario = new javax.swing.JLabel();
+        campofecha = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 51, 255));
@@ -161,10 +170,19 @@ public class REGISTRAR_PEDIDO extends javax.swing.JFrame {
         jButton5.setText("DETERMINACION ??");
 
         jButton9.setText("SALIR");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
 
         jButton10.setText("REGISTRAR PACIENTE");
 
         jButton11.setText("REGISTRAR MEDICO");
+
+        campousuario.setText("cam_usuario");
+
+        campofecha.setText("00/00/00");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -279,7 +297,11 @@ public class REGISTRAR_PEDIDO extends javax.swing.JFrame {
                         .addGap(72, 72, 72)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel2)
-                            .addComponent(jLabel3)))
+                            .addComponent(jLabel3))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(campousuario)
+                            .addComponent(campofecha)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(245, 245, 245)
                         .addComponent(jButton7)
@@ -298,9 +320,13 @@ public class REGISTRAR_PEDIDO extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(campousuario))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel3)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(campofecha))
                 .addGap(10, 10, 10)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -325,7 +351,7 @@ public class REGISTRAR_PEDIDO extends javax.swing.JFrame {
                         .addGap(15, 15, 15)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 1, Short.MAX_VALUE)
+                                .addGap(0, 9, Short.MAX_VALUE)
                                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(46, 46, 46))
                             .addGroup(layout.createSequentialGroup()
@@ -385,9 +411,23 @@ public class REGISTRAR_PEDIDO extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void start(){
+      /*  String elem = campousuario.getText();
+        initComponents();
+        Date fecha= new Date(System.CurrentcurrentTimeMillis());
+        campofecha.setText(fecha.getTime());*/
+
+        
+    }
+    
+   
     private void textField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textField1ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+      System.exit(0);  // TODO add your handling code here:
+    }//GEN-LAST:event_jButton9ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -426,6 +466,8 @@ public class REGISTRAR_PEDIDO extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel campofecha;
+    private javax.swing.JLabel campousuario;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
