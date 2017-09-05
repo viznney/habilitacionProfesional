@@ -38,7 +38,7 @@ public class ExpertoLogin
             DTOUsuario dtoUL = new DTOUsuario();
             String user = ((UsuarioLab)us).getUsuario();
             dtoUL.setUsuario(user);
-            int nombre = ((UsuarioLab)us).getContraseña();
+            String nombre =((UsuarioLab)us).getContraseña();
             dtoUL.setContraseña(nombre);
             listaDTOUsuario.add(dtoUL);
         }
