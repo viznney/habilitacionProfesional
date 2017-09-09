@@ -14,7 +14,7 @@ public class ExpertoLogin
     public List<DTOUsuario> buscarUsuario(DTOUsuario DtoNombre){
         List<DTOUsuario> listaDTOUsuario = new ArrayList<>();
         
-        List<DTOCriterio> criterioList1 = new ArrayList<>();
+        /*List<DTOCriterio> criterioList1 = new ArrayList<>();
         DTOCriterio criterio1 = new DTOCriterio();
         criterio1.setAtributo("nombreEstadoUsuario");
         criterio1.setOperacion("=");
@@ -23,11 +23,11 @@ public class ExpertoLogin
 
         EstadoUsuario estado  = (EstadoUsuario) FachadaPersistencia.getInstance().buscar("EstadoUsuario", criterioList1).get(0);
         
-        List<DTOCriterio> criterioList2 = new ArrayList<>();
+        */List<DTOCriterio> criterioList2 = new ArrayList<>();
         DTOCriterio criterio2 = new DTOCriterio();
-        criterio2.setAtributo("m_EstadoUsuario");
+        criterio2.setAtributo("usuario");
         criterio2.setOperacion("=");
-        criterio2.setValor(estado);
+        criterio2.setValor("viznney");
         criterioList2.add(criterio2);
 
         List<Object> listaTI = FachadaPersistencia.getInstance().buscar("UsuarioLab", criterioList2);

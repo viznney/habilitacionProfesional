@@ -10,15 +10,15 @@ package DTOs;
  * @author Andres
  */
 public class DTOUsuario {
-    int contraseña;
+    String contraseña;
     String usuario;
 
 
-    public int getContraseña() {
+    public String getContraseña() {
         return contraseña;
     }
 
-    public void setContraseña(int contraseña1) {
+    public void setContraseña(String contraseña1) {
         this.contraseña = contraseña1;
     }
 

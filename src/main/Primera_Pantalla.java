@@ -33,27 +33,14 @@ public class Primera_Pantalla extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        textField1 = new java.awt.TextField();
-        textField2 = new java.awt.TextField();
         label1 = new java.awt.Label();
         label2 = new java.awt.Label();
         jLabel1 = new javax.swing.JLabel();
         OK = new javax.swing.JButton();
+        password = new javax.swing.JPasswordField();
+        txtUsuario = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        textField1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        textField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textField1ActionPerformed(evt);
-            }
-        });
-
-        textField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textField2ActionPerformed(evt);
-            }
-        });
 
         label1.setText("Usuario");
 
@@ -63,6 +50,11 @@ public class Primera_Pantalla extends javax.swing.JFrame {
         jLabel1.setText("Sistema Laboratorio");
 
         OK.setText("OK");
+        OK.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OKMouseClicked(evt);
+            }
+        });
         OK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 OKActionPerformed(evt);
@@ -82,8 +74,8 @@ public class Primera_Pantalla extends javax.swing.JFrame {
                             .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(28, 28, 28)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(textField2, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
-                            .addComponent(textField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(password)
+                            .addComponent(txtUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(167, 167, 167)
                         .addComponent(jLabel1))
@@ -98,13 +90,13 @@ public class Primera_Pantalla extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(textField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addComponent(OK)
                 .addGap(67, 67, 67))
@@ -113,16 +105,8 @@ public class Primera_Pantalla extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void textField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textField1ActionPerformed
-
-    private void textField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textField2ActionPerformed
-
     private void OKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OKActionPerformed
-     String nombreU = textField1.getText();
+     /*String nombreU = textField1.getText();
      int contrasenaU = textField2.getX();
      DTOUsuario user = new DTOUsuario();
           
@@ -136,13 +120,37 @@ public class Primera_Pantalla extends javax.swing.JFrame {
      {JOptionPane.showMessageDialog(null, ListaUsuario.get(0).getUsuario());
      SEGUNDA_PANTALLA segun2 = new SEGUNDA_PANTALLA();//modti era la variable 
         segun2.setVisible(true);}
-     else{JOptionPane.showMessageDialog(null, "USUARIO O CONTRASEÑA INCORRECTA");}
+     else{JOptionPane.showMessageDialog(null, "USUARIO O CONTRASEÑA INCORRECTA");}*/
     }//GEN-LAST:event_OKActionPerformed
 
+    private void OKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OKMouseClicked
+     String nombreU = txtUsuario.getText();
+     String contrasenaU = new String(password.getPassword());
+     DTOUsuario user = new DTOUsuario();
+          
+     user.setUsuario(nombreU);
+     user.setContraseña(contrasenaU);
+     //JOptionPane.showMessageDialog(null, user.getUsuario());
+     List<DTOUsuario> ListaUsuario = new ArrayList<>();
+     ListaUsuario = controlador.buscarUsuario(user);
+
+          
+     if(ListaUsuario.get(0).getUsuario().equals(nombreU)&&ListaUsuario.get(0).getContraseña().equals(contrasenaU)){
+         
+         SEGUNDA_PANTALLA SP= new SEGUNDA_PANTALLA();
+         SP.setVisible(true);
+         dispose();
+         
+     }
+     else{
+         JOptionPane.showMessageDialog(this, "Usuario / Contraseña incorrecto");
+     }        // TODO add your handling code here:
+    }//GEN-LAST:event_OKMouseClicked
+
     private void start(){
-    textField1.setText("");
-    textField2.setText("");
-    OK.setEnabled(true);
+    //textField1.setText("");
+    //textField2.setText("");
+    //OK.setEnabled(true);
     }
     
      private void formWindowOpened(java.awt.event.WindowEvent evt) {                                  
@@ -189,7 +197,7 @@ public class Primera_Pantalla extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private java.awt.Label label1;
     private java.awt.Label label2;
-    private java.awt.TextField textField1;
-    private java.awt.TextField textField2;
+    private javax.swing.JPasswordField password;
+    private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }

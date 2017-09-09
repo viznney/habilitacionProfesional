@@ -7,7 +7,7 @@
             <generator class="uuid2"/>
         </id>
 
-        <property name="contraseña" type="int">
+        <property name="contraseña" type="string">
             <column name="contraseña"/>
         </property>
         

@@ -7,7 +7,7 @@ package entidades;
  */
 public class UsuarioLab extends Entidad {
 
-	private int contraseña;
+	private String contraseña;
 	private String usuario;
 	public EstadoUsuario m_EstadoUsuario;
 	public PermisoUsuario m_PermisoUsuario;
@@ -15,11 +15,11 @@ public class UsuarioLab extends Entidad {
 	public UsuarioLab(){
     }
 
-    public int getContraseña() {
+    public String getContraseña() {
         return contraseña;
     }
 
-    public void setContraseña(int contraseña) {
+    public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
     }
 
