@@ -31,16 +31,12 @@ public class INFORMARPEDIDO extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
         jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jTextField9 = new javax.swing.JTextField();
         jTextField11 = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
@@ -53,10 +49,8 @@ public class INFORMARPEDIDO extends javax.swing.JFrame {
         choice1 = new java.awt.Choice();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
-        jLabel11 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
-        jLabel12 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -71,7 +65,7 @@ public class INFORMARPEDIDO extends javax.swing.JFrame {
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
 
         jLabel3.setText("Seleccione determinacion");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 190, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 210, -1, -1));
 
         jLabel4.setText("Fecha :");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 63, -1, -1));
@@ -82,19 +76,15 @@ public class INFORMARPEDIDO extends javax.swing.JFrame {
         jLabel6.setText("Nombre Paciente:");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, 26));
 
-        jLabel9.setText("Plantilla Numero:");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, -1, -1));
-
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
         jScrollPane3.setViewportView(jTextArea2);
 
-        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 160, 127, 80));
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 164, 127, -1));
         getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 110, -1));
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 260, 90, -1));
 
         jButton3.setText("Guardar");
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 360, -1, 30));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 320, -1, 30));
 
         jButton4.setText("Editar");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -102,21 +92,17 @@ public class INFORMARPEDIDO extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 400, 70, 30));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 370, 70, 30));
 
         jButton5.setText("CONFIRMAR");
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 490, 162, -1));
-
-        jButton6.setText("OK");
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 190, -1, -1));
-        getContentPane().add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 360, 34, -1));
         getContentPane().add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 110, -1));
 
         jLabel10.setText("DNI Paciente:");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, -1, -1));
 
         jButton7.setText("OK");
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, -1, -1));
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 210, -1, -1));
 
         jSeparator1.setForeground(new java.awt.Color(0, 0, 255));
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 720, 10));
@@ -133,27 +119,26 @@ public class INFORMARPEDIDO extends javax.swing.JFrame {
 
         jButton8.setText("IMPRIMIR");
         getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 490, 140, -1));
-        getContentPane().add(choice1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 70, -1));
+        getContentPane().add(choice1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 90, -1));
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Codigo Determinacion", "Nombre Determinacion", "Valor", "Unidad de Medida"
+                "Nombre Determinacion", "Valor", "unidad medida"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Float.class, java.lang.String.class
+                java.lang.String.class, java.lang.Float.class, java.lang.Object.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
-        jTable2.setCellSelectionEnabled(true);
         jTable2.addVetoableChangeListener(new java.beans.VetoableChangeListener() {
             public void vetoableChange(java.beans.PropertyChangeEvent evt)throws java.beans.PropertyVetoException {
                 jTable2VetoableChange(evt);
@@ -161,19 +146,18 @@ public class INFORMARPEDIDO extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable2);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, 440, 80));
-
-        jLabel11.setText("Sector a Informar");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 260, -1, -1));
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 260, 60, -1));
-
-        jLabel12.setText("Nombre del Sector");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 260, -1, -1));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, 370, 80));
 
         jButton2.setText("SALIR");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 490, 130, -1));
+
+        jButton9.setText("OK");
+        getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -185,6 +169,10 @@ public class INFORMARPEDIDO extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -228,21 +216,17 @@ public class INFORMARPEDIDO extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
-    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
@@ -252,7 +236,5 @@ public class INFORMARPEDIDO extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
 }
